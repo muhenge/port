@@ -3,7 +3,7 @@ import Link from "next/link";
 interface NavProps {
   text: string;
   url: string;
-  icon: React.ReactNode; // Add an icon prop
+  icon: React.ReactNode;
 }
 
 export function Nav({ text, url, icon }: NavProps) {
