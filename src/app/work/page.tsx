@@ -6,14 +6,14 @@ export default function ProjectsPage() {
       id: "loan-payment-system",
       title: "Online Loan Payment System",
       description:
-        "A comprehensive loan payment system featuring USSD and Android applications for accessibility.",
+        "As a lead software developer, I developer the entire backend of the application, JaliKoi is designed to simplify your life by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place ",
       features: [
         "Enabled clients to apply for loans and make payments.",
         "Developed a USSD app for basic mobile phones.",
         "Created employee portals for loan verification.",
       ],
-      techStack: ["NestJS", "React.js", "Flutter", "PHP Laravel", "SQL"],
-      link: "https://example.com",
+      techStack: ["NestJS", "React.js", "PHP Laravel", "SQL", "Nginx"],
+      link: "https://jalikoi.rw/",
     },
     {
       id: "ihuzo-project",

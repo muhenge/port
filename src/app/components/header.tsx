@@ -20,6 +20,7 @@ export function Header() {
         </nav>
       </header>
 
+
       <nav className="fixed bottom-0 left-0 right-0 sm:hidden bg-white shadow-lg border-t border-gray-200">
         <ul className="flex justify-around p-2">
           <Nav text="HOME" url="/" icon={<HomeIcon className="w-6 h-6" />} />
