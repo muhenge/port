@@ -182,7 +182,7 @@ export default function AboutPage() {
           {experiences.map((exp) => (
             <div
               key={exp.id}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white p-6 border-2 border-black shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {exp.title} | {exp.company}

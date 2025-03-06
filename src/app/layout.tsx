@@ -15,10 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ngenzi | portfolio",
-  description: "portfolio website",
+    title: "Ngenzi | portfolio",
+    description: "portfolio website",
+    icons: {
+        icon: [
+            { url: "/path21.png", sizes: "32x32", type: "image/png" }, // 32x32 favicon
+            { url: "/path21.png", sizes: "16x16", type: "image/png" }, // 16x16 favicon
+        ],
+    },
 };
-
 export default function RootLayout({
                                      children,
                                    }: Readonly<{

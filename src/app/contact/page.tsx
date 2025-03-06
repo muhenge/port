@@ -20,7 +20,7 @@ export default function ContactPage() {
         <form
           action="https://formspree.io/f/xrgynnpl"
           method="POST"
-          className="bg-white p-6 rounded-lg shadow-md"
+          className="bg-white p-6 border-2 border-black shadow-md"
         >
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-800 font-semibold mb-2">
@@ -31,7 +31,7 @@ export default function ContactPage() {
               id="name"
               name="name"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
             />
           </div>
           <div className="mb-4">
@@ -43,7 +43,7 @@ export default function ContactPage() {
               id="email"
               name="email"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
             />
           </div>
           <div className="mb-4">
@@ -55,7 +55,7 @@ export default function ContactPage() {
               id="subject"
               name="subject"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
             />
           </div>
           <div className="mb-4">
@@ -67,12 +67,12 @@ export default function ContactPage() {
               name="message"
               rows={5}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
             ></textarea>
           </div>
           <button
             type="submit"
-            className="bg-black text-white px-6 py-2 rounded-md hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
+            className="bg-black text-white px-6 py-2 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
           >
             Send Message
           </button>
