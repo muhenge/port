@@ -9,7 +9,7 @@ export function Header() {
     return (
         <>
             {/* Desktop Header */}
-            <header className="hidden sm:flex justify-between items-center p-4 bg-transparent sticky top-0 z-50">
+            <header className="hidden sm:flex justify-between items-center p-4 sticky top-0 z-50">
                 <h1 className="text-xl font-bold text-white">My Website</h1>
                 <nav className="flex-grow flex justify-center">
                     <ul className="flex space-x-6 bg-black/20 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-gray-800">

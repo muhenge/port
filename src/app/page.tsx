@@ -1,7 +1,7 @@
 import Link from "next/link";
-import GitHubIcon from "@mui/icons-material/GitHub"; // GitHub icon
-import LinkedInIcon from "@mui/icons-material/LinkedIn"; // LinkedIn icon
-import EmailIcon from "@mui/icons-material/Email"; // Email icon
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function Home() {
   return (
