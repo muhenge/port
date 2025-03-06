@@ -3,19 +3,6 @@ import Link from "next/link";
 export default function ProjectsPage() {
   const projects = [
     {
-      id: "loan-payment-system",
-      title: "Online Loan Payment System",
-      description:
-        "As a lead software developer, I developer the entire backend of the application, JaliKoi is designed to simplify your life by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place ",
-      features: [
-        "Enabled clients to apply for loans and make payments.",
-        "Developed a USSD app for basic mobile phones.",
-        "Created employee portals for loan verification.",
-      ],
-      techStack: ["NestJS", "React.js", "PHP Laravel", "SQL", "Nginx"],
-      link: "https://jalikoi.rw/",
-    },
-    {
       id: "ihuzo-project",
       title: "Ihuzo Project",
       description:
@@ -26,21 +13,34 @@ export default function ProjectsPage() {
         "Integrated Redis for caching.",
       ],
       techStack: ["PHP Laravel", "Node.js", "Redis", "PostgreSQL"],
-      link: "https://example.com",
+      link: "https://ihuzo.rw/?tab=dsp",
     },
     {
-      id: "hotel-management-system",
-      title: "Hotel Management System",
+      id: "loan-payment-system",
+      title: "Online Loan Payment System",
       description:
-        "A desktop application for managing hotel services and client payments.",
+          "As a lead software developer, I developer the entire backend of the application, JaliKoi is designed to simplify your life by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place ",
       features: [
-        "Connected all hotel services into one platform.",
-        "Secured client payment processing.",
-        "Generated automated reports for management.",
+        "Enabled clients to apply for loans and make payments.",
+        "Developed a USSD app for basic mobile phones.",
+        "Created employee portals for loan verification.",
       ],
-      techStack: ["Java Swing", "Java"],
-      link: "https://example.com",
+      techStack: ["NestJS", "React.js", "PHP Laravel", "SQL", "Nginx"],
+      link: "https://jalikoi.rw/",
     },
+    // {
+    //   id: "hotel-management-system",
+    //   title: "Hotel Management System",
+    //   description:
+    //     "A desktop application for managing hotel services and client payments.",
+    //   features: [
+    //     "Connected all hotel services into one platform.",
+    //     "Secured client payment processing.",
+    //     "Generated automated reports for management.",
+    //   ],
+    //   techStack: ["Java Swing", "Java"],
+    //   link: "https://example.com",
+    // },
     {
       id: "open-source-contributions",
       title: "Open Source Contributions",
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
         "Used Docker for containerization.",
       ],
       techStack: ["PHP Laravel", "PostgreSQL", "Docker"],
-      link: "https://example.com",
+      link: "https://github.com/ALCOpenSource/Mentor-Management-System-Team-1",
     },
   ];
 
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       {/* Page Title */}
       <section className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
-          My Projects
+          Sample projects
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Here are some of the projects I’ve worked on, showcasing my skills and
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="bg-white p-6 border-2 shadow-md hover:shadow-lg transition-shadow duration-300"
           >
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               {project.title}
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
               {project.techStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-black text-white px-3 py-1 rounded-md text-sm"
+                  className="bg-black text-white px-3 py-1 text-sm"
                 >
                   {tech}
                 </span>
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-black text-white px-4 py-2 rounded-md hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
+                className="inline-block bg-black text-white px-4 py-2 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
               >
                 View Project
               </Link>
