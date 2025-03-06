@@ -8,22 +8,19 @@ import EmailIcon from "@mui/icons-material/Email";
 export function Header() {
     return (
         <>
-            {/* Desktop Header */}
-            <header className="hidden sm:flex justify-between items-center p-4 sticky top-0 z-50">
-                <h1 className="text-xl font-bold text-white">My Website</h1>
-                <nav className="flex-grow flex justify-center">
-                    <ul className="flex space-x-6 bg-black/20 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-gray-800">
-                        <Nav text="HOME" url="/" icon={<HomeIcon className="w-6 h-6" />} />
-                        <Nav text="ABOUT" url="/about" icon={<PersonIcon className="w-6 h-6" />} />
-                        <Nav text="WORK" url="/work" icon={<WorkIcon className="w-6 h-6" />} />
-                        <Nav text="CONTACT" url="/contact" icon={<EmailIcon className="w-6 h-6" />} />
-                    </ul>
-                </nav>
-            </header>
+            {/* Desktop Navigation Bar */}
+            <nav className="hidden sm:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/20 backdrop-blur-sm rounded-lg shadow-lg border border-gray-800">
+                <ul className="flex space-x-6 p-2">
+                    <Nav text="HOME" url="/" icon={<HomeIcon className="w-6 h-6" />} />
+                    <Nav text="ABOUT" url="/about" icon={<PersonIcon className="w-6 h-6" />} />
+                    <Nav text="WORK" url="/work" icon={<WorkIcon className="w-6 h-6" />} />
+                    <Nav text="CONTACT" url="/contact" icon={<EmailIcon className="w-6 h-6" />} />
+                </ul>
+            </nav>
 
             {/* Mobile Navigation Bar */}
-            <nav className="fixed bottom-0 left-0 right-0 sm:hidden bg-white/90 backdrop-blur-lg shadow-lg border-t border-gray-800">
-                <ul className="flex justify-around p-2">
+            <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/20 backdrop-blur-sm rounded-lg shadow-lg border border-gray-800 sm:hidden">
+                <ul className="flex space-x-6 p-2">
                     <Nav text="HOME" url="/" icon={<HomeIcon className="w-6 h-6" />} />
                     <Nav text="ABOUT" url="/about" icon={<PersonIcon className="w-6 h-6" />} />
                     <Nav text="WORK" url="/work" icon={<WorkIcon className="w-6 h-6" />} />

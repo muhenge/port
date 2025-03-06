@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/header";
-// import WhatsAppFloat from "./components/WhatsAppFloat";
 import { ThemeProvider } from "next-themes";
-// import ThemeToggle from "./components/components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,19 +20,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
-          <main>{children}</main>
-          {/* <WhatsAppFloat /> */}
-        </ThemeProvider>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Header />
+        {/* Add padding to main to prevent content overlap */}
+        <main className="pt-20 pb-16 sm:pb-0">{children}</main>
+      </ThemeProvider>
       </body>
-    </html>
+      </html>
   );
 }
