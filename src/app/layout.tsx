@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "./components/header";
 // import WhatsAppFloat from "./components/WhatsAppFloat";
 import { ThemeProvider } from "next-themes";
-import ThemeToggle from "@/app/components/ThemeToggle";
 // import ThemeToggle from "./components/components/ThemeToggle";
 
 const geistSans = Geist({
