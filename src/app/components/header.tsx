@@ -22,7 +22,7 @@ export function Header() {
             </header>
 
             {/* Mobile Navigation Bar */}
-            <nav className="fixed bottom-0 left-0 right-0 sm:hidden bg-white/90 backdrop-blur-lg transparent shadow-lg border-t border-gray-800">
+            <nav className="fixed bottom-0 left-0 right-0 sm:hidden bg-white/90 backdrop-blur-lg shadow-lg border-t border-gray-800">
                 <ul className="flex justify-around p-2">
                     <Nav text="HOME" url="/" icon={<HomeIcon className="w-6 h-6" />} />
                     <Nav text="ABOUT" url="/about" icon={<PersonIcon className="w-6 h-6" />} />
