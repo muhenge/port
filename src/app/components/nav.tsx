@@ -11,7 +11,7 @@ export function Nav({ text, url, icon }: NavProps) {
         <li className="relative group">
             <Link
                 href={url}
-                className="flex flex-col items-center text-black  transition-colors duration-300  hover:scale-125 focus:scale-135"
+                className="flex flex-col items-center text-black  transition-colors duration-300  hover:scale-125 focus:scale-135 focus:font-extrabold"
             >
                 {/* Icon (always visible) */}
                 <span className="mb-1 focus:scale-205">{icon}</span>
