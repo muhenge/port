@@ -26,7 +26,7 @@ export default function ProjectsPage() {
         "Created employee portals for loan verification.",
       ],
       techStack: ["NestJS", "React.js", "PHP Laravel", "SQL", "Nginx"],
-      link: "https://jalikoi.rw/",
+      link: "https://play.google.com/store/apps/details?id=koipay.co.koipay&pli=1",
     },
     // {
     //   id: "hotel-management-system",
