@@ -1,5 +1,6 @@
 'use client';
 import { Nav } from "./nav";
+
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import WorkIcon from "@mui/icons-material/Work";
@@ -11,7 +12,7 @@ export function Header() {
     return (
         <>
             {/* Desktop Navigation Bar */}
-            <nav className="hidden sm:flex items-center fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-100/20 backdrop-blur-[5px] shadow-sm border-2 border-gray-300/40 px-6  min-w-[600px] lg:min-w-[700px]">
+            <nav className="hidden sm:flex items-center fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-100/20 backdrop-blur-[5px] shadow-sm border-2 border-gray-300/40 px-6 min-w-[600px] lg:min-w-[700px]">
                 {/* Profile Picture with Link to Home */}
                 <Link href="/" className="mr-8">
                     <div className="border-2 border-white shadow-sm overflow-hidden hover:scale-105 transition-transform duration-300 w-12 h-12 flex items-center justify-center bg-white">
@@ -32,6 +33,8 @@ export function Header() {
                     <Nav text="SAMPLE PROJECTS" url="/work" icon={<WorkIcon className="w-6 h-6" />} />
                     <Nav text="CONTACT" url="/contact" icon={<EmailIcon className="w-6 h-6" />} />
                 </ul>
+
+
             </nav>
 
             {/* Mobile Navigation Bar */}
