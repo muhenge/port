@@ -46,7 +46,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <section className="text-center mb-16 sm:mb-20">
+        <section className="text-center mb-16 sm:mb-20 animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             My Work
           </h1>
@@ -57,10 +57,11 @@ export default function ProjectsPage() {
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col"
+              className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="flex-1">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 flex items-center">
@@ -115,6 +116,6 @@ export default function ProjectsPage() {
           ))}
         </section>
       </div>
-    </main>
+    </main >
   );
 }

@@ -1,16 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function AboutPage() {
   // State to manage accordion open/close
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const toggleAccordion = (id: string) => {
     setOpenAccordion(openAccordion === id ? null : id);
@@ -124,7 +119,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Introduction Section */}
-        <section className="text-center mb-16 sm:mb-20">
+        <section className="text-center mb-16 sm:mb-20 animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             About Me
           </h1>
@@ -186,21 +181,16 @@ export default function AboutPage() {
                       {exp.duration} | {exp.location}
                     </p>
                   </div>
-                  {isClient ? (
-                    <button
-                      onClick={() => toggleAccordion(exp.id)}
-                      className="px-6 py-3 bg-black text-white hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 font-medium"
-                    >
-                      {openAccordion === exp.id ? "Hide Details" : "View Details"}
-                    </button>
-                  ) : (
-                    <div className="px-6 py-3 bg-black text-white font-medium">
-                      View Details
-                    </div>
-                  )}
+                  <button
+                    onClick={() => toggleAccordion(exp.id)}
+                    className="px-6 py-3 bg-black text-white hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 font-medium"
+                    suppressHydrationWarning
+                  >
+                    {openAccordion === exp.id ? "Hide Details" : "View Details"}
+                  </button>
                 </div>
 
-                {isClient && openAccordion === exp.id && (
+                {openAccordion === exp.id && (
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-gray-800 mb-4">
