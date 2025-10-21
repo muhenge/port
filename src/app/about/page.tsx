@@ -197,7 +197,7 @@ export default function AboutPage() {
             About Me
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Hi, I'm HERVE M. Ngenzi, a full-stack web developer passionate about building scalable and efficient web applications. With professional experience working with modern frameworks and tools, I specialize in solving complex problems with clean, maintainable code.
+            Hi, I&apos;m HERVE M. Ngenzi, a full-stack web developer passionate about building scalable and efficient web applications. With professional experience working with modern frameworks and tools, I specialize in solving complex problems with clean, maintainable code.
           </p>
         </section>
 
@@ -395,7 +395,7 @@ export default function AboutPage() {
 
         {/* Call-to-Action Section */}
         <section className="text-center bg-white p-8 lg:p-12 border-2 border-gray-200">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">Let's Work Together</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">Let&apos;s Work Together</h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Interested in collaborating or have a project in mind? Feel free to reach out!
           </p>

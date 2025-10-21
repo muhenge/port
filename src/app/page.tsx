@@ -41,7 +41,7 @@ export default function Home() {
                 href="/contact"
                 className="bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-lg transition-all duration-300 w-full sm:w-auto transform hover:scale-105 interactive-element hover-glow"
               >
-                Let's get in touch →
+                Let&apos;s get in touch →
               </Link>
               <Link
                 href="/work"
