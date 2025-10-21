@@ -1,16 +1,39 @@
-"use client"; // Required for interactivity (accordions)
+"use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function AboutPage() {
   // State to manage accordion open/close
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const toggleAccordion = (id: string) => {
     setOpenAccordion(openAccordion === id ? null : id);
   };
 
+  const skills = [
+    {
+      category: 'Backend',
+      items: ['Nest.js', 'PHP Laravel', 'Ruby on Rails', 'Node.js', 'Express.js', 'TypeScript']
+    },
+    {
+      category: 'Frontend',
+      items: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'JavaScript (ES6+)']
+    },
+    {
+      category: 'Databases',
+      items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'SQL', 'Firebase']
+    },
+    {
+      category: 'Tools & DevOps',
+      items: ['Docker', 'Git', 'AWS', 'Nginx', 'Ubuntu', 'CI/CD']
+    }
+  ];
   const experiences = [
     {
       id: "jali-finance",
@@ -98,147 +121,133 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen p-8 bg-gray-50">
-      {/* Introduction Section */}
-      <section className="text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
-          About Me
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Hi, I'm HERVE M. Ngenzi, a full-stack web developer passionate about building scalable and efficient web applications. With professional experience working with modern frameworks and tools, I specialize in solving complex problems with clean, maintainable code.
-        </p>
-      </section>
+    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        {/* Introduction Section */}
+        <section className="text-center mb-16 sm:mb-20">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+            About Me
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Hi, I'm HERVE M. Ngenzi, a full-stack web developer passionate about building scalable and efficient web applications. With professional experience working with modern frameworks and tools, I specialize in solving complex problems with clean, maintainable code.
+          </p>
+        </section>
 
-      {/* Skills Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">My Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Backend Skills */}
-          <div className="bg-white p-6 border-2 shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Backend</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Nest.js", "PHP Laravel", "Ruby on Rails"].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-black text-white px-4 py-2 text-sm hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Frontend Skills */}
-          <div className="bg-white p-6 border-2 shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Frontend</h3>
-            <div className="flex flex-wrap gap-2">
-              {["React.js", "Next.js"].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-black text-white px-4 py-2 text-sm hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Database Skills */}
-          <div className="bg-white p-6 shadow-md border-2 hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Databases</h3>
-            <div className="flex flex-wrap gap-2">
-              {["MySQL", "PostgreSQL", "MongoDB"].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-black text-white px-4 py-2 text-sm hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Tools */}
-          <div className="bg-white p-6 shadow-md border-2 hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Tools</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Ubuntu", "Nginx", "Docker"].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-black text-white px-4 py-2  text-sm hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Experience Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Professional Experience</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {experiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="bg-white p-6 border-2 border-black shadow-md hover:shadow-lg transition-shadow duration-300"
-            >
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {exp.title} | {exp.company}
-              </h3>
-              <p className="text-gray-600 mb-2">
-                {exp.duration} | {exp.location}
-              </p>
-              <button
-                onClick={() => toggleAccordion(exp.id)}
-                className="text-black p-2 border-2 hover:text-white hover:bg-black focus:outline-none"
+        {/* Skills Section */}
+        <section className="mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 text-center">
+            My Skills
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {skills.map((skillGroup, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300"
               >
-                {openAccordion === exp.id ? "Hide Details" : "View Details"}
-              </button>
-              {openAccordion === exp.id && (
-                <div className="mt-4">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                    Key Achievements
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2">
-                    {exp.achievements.map((achievement, index) => (
-                      <li key={index}>{achievement}</li>
-                    ))}
-                  </ul>
-                  <h4 className="text-lg font-semibold text-gray-800 mt-4 mb-2">
-                    Tech Stack
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.techStack.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="bg-black text-white px-3 py-1 rounded-md text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <span className="w-2 h-6 bg-black mr-3"></span>
+                  {skillGroup.category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map((skill, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* Call-to-Action Section */}
-      <section className="text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Let&apos;s Work Together</h2>
-        <p className="text-lg text-gray-600 mb-6">
-          Interested in collaborating or have a project in mind? Feel free to reach out!
-        </p>
-        <Link
-          href="/contact"
-          className="bg-black p-4 relative group text-lg font-semibold text-white hover:bg-white hover:text-black hover:shadow-lg hover:shadow-black/50 transition-all duration-300"
-        >
-          Get in Touch
-        </Link>
-      </section>
+        {/* Professional Experience Section */}
+        <section className="mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 text-center">
+            Professional Experience
+          </h2>
+          <div className="max-w-5xl mx-auto space-y-8">
+            {experiences.map((exp) => (
+              <div
+                key={exp.id}
+                className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 mb-2">
+                      {exp.title}
+                    </h3>
+                    <p className="text-lg font-medium text-gray-700 mb-1">
+                      {exp.company}
+                    </p>
+                    <p className="text-gray-600">
+                      {exp.duration} | {exp.location}
+                    </p>
+                  </div>
+                  {isClient ? (
+                    <button
+                      onClick={() => toggleAccordion(exp.id)}
+                      className="px-6 py-3 bg-black text-white hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 font-medium"
+                    >
+                      {openAccordion === exp.id ? "Hide Details" : "View Details"}
+                    </button>
+                  ) : (
+                    <div className="px-6 py-3 bg-black text-white font-medium">
+                      View Details
+                    </div>
+                  )}
+                </div>
+
+                {isClient && openAccordion === exp.id && (
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                        Key Achievements
+                      </h4>
+                      <ul className="list-disc list-inside text-gray-600 space-y-3">
+                        {exp.achievements.map((achievement, index) => (
+                          <li key={index} className="pl-2 leading-relaxed">{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                        Tech Stack
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {exp.techStack.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="bg-gray-100 text-gray-800 px-4 py-2 text-sm font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Call-to-Action Section */}
+        <section className="text-center bg-white p-8 lg:p-12 border-2 border-gray-200">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">Let's Work Together</h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Interested in collaborating or have a project in mind? Feel free to reach out!
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300"
+          >
+            Get in Touch
+          </Link>
+        </section>
+      </div>
     </main>
   );
 }
