@@ -22,17 +22,43 @@ export default function ProjectsPage() {
         "As a lead software developer, I developed the entire backend of the JaliKoi application, which is designed to simplify users' lives by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place.",
       features: [
         "Enabled clients to apply for loans and make payments.",
-        "Developed a USSD app for basic mobile phones.",
+        "Developed a USSD application for basic mobile phones.",
         "Created employee portals for loan verification.",
       ],
       techStack: ["NestJS", "React.js", "PHP Laravel", "SQL", "Nginx"],
       link: "https://play.google.com/store/apps/details?id=koipay.co.koipay&pli=1",
     },
     {
+      id: "globexcam-backend",
+      title: "GlobexCam Backend Systems",
+      description:
+        "Architected and developed optimized backend database applications with focus on performance and scalability.",
+      features: [
+        "Built backend database applications with 100% normalization.",
+        "Optimized large-scale codebase for performance and maintainability.",
+        "Designed and integrated RESTful APIs for React.js frontend applications.",
+      ],
+      techStack: ["PHP Laravel", "React.js", "MySQL", "PostgreSQL", "REST APIs"],
+      link: "#",
+    },
+    {
+      id: "training-programs",
+      title: "Backend Development Training Programs",
+      description:
+        "Led comprehensive training programs for tech enthusiasts and graduates, focusing on backend development and software engineering.",
+      features: [
+        "Designed training curricula aligned with industry best practices.",
+        "Provided hands-on mentorship for real-world development challenges.",
+        "Equipped trainees with REST API development and database management skills.",
+      ],
+      techStack: ["Training", "Mentoring", "REST APIs", "Database Design", "OOP"],
+      link: "#",
+    },
+    {
       id: "open-source-contributions",
       title: "Open Source Contributions",
       description:
-        "Collaborated with Andela's open-source program to improve existing projects.",
+        "Collaborated with Andela's open-source program to improve existing projects and contribute to the developer community.",
       features: [
         "Fixed bugs and improved project structure.",
         "Worked with PHP Laravel and PostgreSQL.",
@@ -98,14 +124,55 @@ export default function ProjectsPage() {
                     Tech Stack
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {project.techStack.map((tech, index) => {
+                      // Map tech names to devicon classes and URLs
+                      const getTechInfo = (techName: string) => {
+                        const techMap: { [key: string]: { icon: string; url: string } } = {
+                          'PHP Laravel': { icon: 'devicon-laravel-plain', url: 'https://laravel.com/' },
+                          'Node.js': { icon: 'devicon-nodejs-plain', url: 'https://nodejs.org/' },
+                          'Redis': { icon: 'devicon-redis-plain', url: 'https://redis.io/' },
+                          'PostgreSQL': { icon: 'devicon-postgresql-plain', url: 'https://www.postgresql.org/' },
+                          'NestJS': { icon: 'devicon-nestjs-plain', url: 'https://nestjs.com/' },
+                          'React.js': { icon: 'devicon-react-original', url: 'https://reactjs.org/' },
+                          'SQL': { icon: 'devicon-mysql-plain', url: 'https://www.w3schools.com/sql/' },
+                          'Nginx': { icon: 'devicon-nginx-original', url: 'https://nginx.org/' },
+                          'Docker': { icon: 'devicon-docker-plain', url: 'https://www.docker.com/' },
+                          'REST APIs': { icon: 'devicon-fastapi-plain', url: 'https://restfulapi.net/' },
+                          'Database Design': { icon: 'devicon-postgresql-plain', url: '#' },
+                          'OOP': { icon: 'devicon-java-plain', url: '#' },
+                          'Training': { icon: '', url: '#' },
+                          'Mentoring': { icon: '', url: '#' }
+                        };
+                        return techMap[techName] || { icon: '', url: '#' };
+                      };
+
+                      const techInfo = getTechInfo(tech);
+
+                      return techInfo.url !== '#' ? (
+                        <a
+                          key={index}
+                          href={techInfo.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2 transform hover:scale-105"
+                        >
+                          {techInfo.icon && (
+                            <i className={`${techInfo.icon} text-base`}></i>
+                          )}
+                          {tech}
+                        </a>
+                      ) : (
+                        <span
+                          key={index}
+                          className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                          {techInfo.icon && (
+                            <i className={`${techInfo.icon} text-base`}></i>
+                          )}
+                          {tech}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

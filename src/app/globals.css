@@ -21,6 +21,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
+  /* font-size: 24px; */
 }
 
 /* Add smooth scrolling */

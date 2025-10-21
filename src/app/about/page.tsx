@@ -13,20 +13,59 @@ export default function AboutPage() {
 
   const skills = [
     {
-      category: 'Backend',
-      items: ['Nest.js', 'PHP Laravel', 'Ruby on Rails', 'Node.js', 'Express.js', 'TypeScript']
+      category: 'Backend Frameworks',
+      items: [
+        { name: 'Nest.js', icon: 'devicon-nestjs-plain', url: 'https://nestjs.com/' },
+        { name: 'PHP Laravel', icon: 'devicon-laravel-plain', url: 'https://laravel.com/' },
+        { name: 'Ruby on Rails', icon: 'devicon-rails-plain', url: 'https://rubyonrails.org/' },
+        { name: 'Express.js', icon: 'devicon-express-original', url: 'https://expressjs.com/' },
+        { name: 'Node.js', icon: 'devicon-nodejs-plain', url: 'https://nodejs.org/' },
+        { name: 'TypeScript', icon: 'devicon-typescript-plain', url: 'https://www.typescriptlang.org/' }
+      ]
     },
     {
-      category: 'Frontend',
-      items: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'JavaScript (ES6+)']
+      category: 'Frontend Technologies',
+      items: [
+        { name: 'React.js', icon: 'devicon-react-original', url: 'https://reactjs.org/' },
+        { name: 'Next.js', icon: 'devicon-nextjs-original', url: 'https://nextjs.org/' },
+        { name: 'JavaScript (ES6+)', icon: 'devicon-javascript-plain', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+        { name: 'TypeScript', icon: 'devicon-typescript-plain', url: 'https://www.typescriptlang.org/' },
+        { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain', url: 'https://tailwindcss.com/' },
+        { name: 'Redux', icon: 'devicon-redux-original', url: 'https://redux.js.org/' }
+      ]
     },
     {
-      category: 'Databases',
-      items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'SQL', 'Firebase']
+      category: 'Databases & Storage',
+      items: [
+        { name: 'MySQL', icon: 'devicon-mysql-plain', url: 'https://www.mysql.com/' },
+        { name: 'PostgreSQL', icon: 'devicon-postgresql-plain', url: 'https://www.postgresql.org/' },
+        { name: 'MongoDB', icon: 'devicon-mongodb-plain', url: 'https://www.mongodb.com/' },
+        { name: 'Redis', icon: 'devicon-redis-plain', url: 'https://redis.io/' },
+        { name: 'SQL', icon: 'devicon-mysql-plain', url: 'https://www.w3schools.com/sql/' },
+        { name: 'Database Design', icon: 'devicon-postgresql-plain', url: '#' }
+      ]
     },
     {
-      category: 'Tools & DevOps',
-      items: ['Docker', 'Git', 'AWS', 'Nginx', 'Ubuntu', 'CI/CD']
+      category: 'DevOps & Tools',
+      items: [
+        { name: 'Docker', icon: 'devicon-docker-plain', url: 'https://www.docker.com/' },
+        { name: 'Git', icon: 'devicon-git-plain', url: 'https://git-scm.com/' },
+        { name: 'Nginx', icon: 'devicon-nginx-original', url: 'https://nginx.org/' },
+        { name: 'Ubuntu/Linux', icon: 'devicon-ubuntu-plain', url: 'https://ubuntu.com/' },
+        { name: 'REST APIs', icon: 'devicon-fastapi-plain', url: 'https://restfulapi.net/' },
+        { name: 'System Architecture', icon: 'devicon-amazonwebservices-original', url: '#' }
+      ]
+    },
+    {
+      category: 'Leadership & Training',
+      items: [
+        { name: 'Team Leadership', icon: '', url: '#' },
+        { name: 'Mentoring', icon: '', url: '#' },
+        { name: 'Code Review', icon: 'devicon-github-original', url: 'https://github.com/' },
+        { name: 'Curriculum Design', icon: '', url: '#' },
+        { name: 'Technical Training', icon: '', url: '#' },
+        { name: 'Project Management', icon: '', url: '#' }
+      ]
     }
   ];
   const experiences = [
@@ -38,11 +77,11 @@ export default function AboutPage() {
       location: "Remote",
       achievements: [
         "Developed an online loan payment system, featuring both USSD and Android applications.",
-        "Enabled clients to apply for a loan or make loan payments.",
-        "Ensured accessibility for both smartphone apps and basic mobile phones by creating the USSD app.",
-        "Created employee portals and dashboards for loan applicant verification and printing new applicant information.",
+        "Enabled clients to apply for loans and make loan payments.",
+        "Ensured accessibility for both smartphone apps and basic mobile phones by creating a USSD app.",
+        "Created employee portals and dashboards for loan applicant verification and printing applicant information.",
         "Managed the developer team while actively contributing to the code and system architecture.",
-        "Led the team in selecting the most appropriate technologies to build a robust and scalable software solution.",
+        "Led the team in selecting the most appropriate technologies to build robust and scalable software solutions.",
       ],
       techStack: [
         "NestJS framework",
@@ -61,7 +100,7 @@ export default function AboutPage() {
       location: "Remote, Cyprus",
       achievements: [
         "Built performant and secure server-side applications and databases by selecting the right tools and technologies.",
-        "Reviewed code for developers and ensured appropriate feedback, maintaining a 100% success rate in project structure, SOLID, DRY, and YAGNI principles.",
+        "Reviewed code for developers and provided appropriate feedback, maintaining a 100% success rate in project structure, SOLID, DRY, and YAGNI principles.",
       ],
       techStack: [
         "TypeScript",
@@ -102,17 +141,46 @@ export default function AboutPage() {
       techStack: ["PHP Laravel", "React.js/Redux", "MySQL", "PostgreSQL"],
     },
     {
-      id: "andela",
-      title: "ALC Open Source Project Contributor",
-      company: "Andela",
-      duration: "03/2023 – Present",
-      location: "Remote",
+      id: "back-end-trainer",
+      title: "Back-end Software Development Trainer",
+      company: "Private Sector Federation - KLAB",
+      duration: "2022 – 2023",
+      location: "Kigali, Rwanda",
       achievements: [
-        "Participated as a back-end developer in Andela's open-source program.",
-        "Collaborated with other developers to fix problems and improve existing projects.",
+        "Led training programs for tech enthusiasts and recent graduates, focusing on backend web development.",
+        "Designed and proposed training curricula, ensuring alignment with industry best practices.",
+        "Provided hands-on mentorship, guiding students through real-world development challenges.",
+        "Equipped trainees with fundamental and advanced knowledge in REST API development and database management.",
+        "Taught practical problem-solving techniques for debugging and optimizing code performance.",
       ],
-      techStack: ["PHP Laravel", "PostgreSQL", "Docker"],
+      techStack: ["REST APIs", "Database Management", "OOP", "Mentoring", "Curriculum Design"],
     },
+    {
+      id: "digital-literacy-trainer",
+      title: "Digital Literacy Trainer Consultant",
+      company: "Rwanda Management Institute",
+      duration: "03/2020 – Present",
+      location: "Kigali, Rwanda",
+      achievements: [
+        "Train public sector workers in ICT skills using ICDL modules.",
+        "Ensure workers have the basic skills needed for day-to-day work efficiency.",
+        "Developing digital literacy programs for government employees.",
+      ],
+      techStack: ["ICDL", "ICT Training", "Digital Literacy", "Public Sector"],
+    },
+    // {
+    //   id: "andela",
+    //   title: "ALC Open Source Project Contributor",
+    //   company: "Andela Learning Community",
+    //   duration: "2018 – 2019",
+    //   location: "Remote",
+    //   achievements: [
+    //     "Completed Full-stack JavaScript Program through Andela Learning Community.",
+    //     "Participated as a back-end developer in open-source projects.",
+    //     "Collaborated with other developers to fix problems and improve existing projects.",
+    //   ],
+    //   techStack: ["JavaScript", "Full-stack Development", "Open Source"],
+    // },
   ];
 
   return (
@@ -151,12 +219,30 @@ export default function AboutPage() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {skillGroup.items.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer"
-                    >
-                      {skill}
-                    </span>
+                    skill.url && skill.url !== '#' ? (
+                      <a
+                        key={idx}
+                        href={skill.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2 transform hover:scale-105"
+                      >
+                        {skill.icon && (
+                          <i className={`${skill.icon} text-base`}></i>
+                        )}
+                        {skill.name}
+                      </a>
+                    ) : (
+                      <span
+                        key={idx}
+                        className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2"
+                      >
+                        {skill.icon && (
+                          <i className={`${skill.icon} text-base`}></i>
+                        )}
+                        {skill.name}
+                      </span>
+                    )
                   ))}
                 </div>
               </div>
@@ -214,20 +300,96 @@ export default function AboutPage() {
                         Tech Stack
                       </h4>
                       <div className="flex flex-wrap gap-3">
-                        {exp.techStack.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="bg-gray-100 text-gray-800 px-4 py-2 text-sm font-medium"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                        {exp.techStack.map((tech, index) => {
+                          // Map tech names to devicon classes
+                          const getIcon = (techName: string) => {
+                            const iconMap: { [key: string]: string } = {
+                              'NestJS framework': 'devicon-nestjs-plain',
+                              'React.js': 'devicon-react-original',
+                              'Flutter': 'devicon-flutter-plain',
+                              'PHP Laravel': 'devicon-laravel-plain',
+                              'SQL databases': 'devicon-mysql-plain',
+                              'TypeScript': 'devicon-typescript-plain',
+                              'Express.js framework': 'devicon-express-original',
+                              'MongoDB': 'devicon-mongodb-plain',
+                              'Firebase': 'devicon-firebase-plain',
+                              'Redis': 'devicon-redis-plain',
+                              'AWS': 'devicon-amazonwebservices-original',
+                              'Node.js': 'devicon-nodejs-plain',
+                              'PostgreSQL': 'devicon-postgresql-plain',
+                              'Docker': 'devicon-docker-plain',
+                              'React.js/Redux': 'devicon-react-original',
+                              'MySQL': 'devicon-mysql-plain'
+                            };
+                            return iconMap[techName] || '';
+                          };
+
+                          return (
+                            <span
+                              key={index}
+                              className="bg-gray-100 text-gray-800 px-4 py-2 text-sm font-medium flex items-center gap-2"
+                            >
+                              {getIcon(tech) && (
+                                <i className={`${getIcon(tech)} text-base`}></i>
+                              )}
+                              {tech}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
                 )}
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Education & Certifications Section */}
+        <section className="mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 text-center">
+            Education & Certifications
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Education */}
+            <div className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300 hover-glow animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <span className="w-2 h-6 bg-black mr-3"></span>
+                Education
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-gray-800">Microverse - Remote Full Stack Web Development</h4>
+                  <p className="text-gray-600">2019 – 2020</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Andela Learning Community - Full-stack JavaScript</h4>
+                  <p className="text-gray-600">2018 – 2019</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Adventist University of Central Africa</h4>
+                  <p className="text-gray-600">Networks and Communication Systems (2014 – 2017)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300 hover-glow animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <span className="w-2 h-6 bg-black mr-3"></span>
+                Certifications
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {['React', 'JavaScript', 'Ruby on Rails', 'Programming in Python', 'Ruby and Databases', 'Version Control / Git'].map((cert, index) => (
+                  <span
+                    key={index}
+                    className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer"
+                  >
+                    {cert}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
