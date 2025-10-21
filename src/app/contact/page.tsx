@@ -4,7 +4,12 @@ import EmailIcon from "@mui/icons-material/Email";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8">
+    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8 animated-bg relative">
+      {/* Enhanced Background Effects */}
+      <div className="bg-shapes"></div>
+      <div className="particles"></div>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Page Title */}
         <section className="text-center mb-16 sm:mb-20">
@@ -19,7 +24,7 @@ export default function ContactPage() {
         {/* Two Column Layout: Contact Form & Social Links */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
-          <div className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300">
+          <div className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300 hover-glow animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6 flex items-center">
               <span className="w-2 h-8 bg-black mr-3"></span>
               Send me a message
@@ -79,7 +84,7 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold"
+                className="w-full bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold interactive-element transform hover:scale-105"
               >
                 Send Message →
               </button>
@@ -87,7 +92,7 @@ export default function ContactPage() {
           </div>
 
           {/* Social Links & Info */}
-          <div className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300">
+          <div className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300 hover-glow animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6 flex items-center">
               <span className="w-2 h-8 bg-black mr-3"></span>
               Let&apos;s Connect
@@ -101,7 +106,7 @@ export default function ContactPage() {
                 href="https://github.com/muhenge"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-black transition-colors duration-300 group p-4 border-2 border-gray-200 group-hover:border-black"
+                className="flex items-center text-gray-700 hover:text-black transition-colors duration-300 group p-4 border-2 border-gray-200 group-hover:border-black hover-glow transform hover:scale-105"
               >
                 <div className="mr-4">
                   <GitHubIcon className="w-8 h-8" />
@@ -116,7 +121,7 @@ export default function ContactPage() {
                 href="https://linkedin.com/in/mugungaherve"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-black transition-colors duration-300 group p-4 border-2 border-gray-200 group-hover:border-black"
+                className="flex items-center text-gray-700 hover:text-black transition-colors duration-300 group p-4 border-2 border-gray-200 group-hover:border-black hover-glow transform hover:scale-105"
               >
                 <div className="mr-4">
                   <LinkedInIcon className="w-8 h-8" />
@@ -129,7 +134,7 @@ export default function ContactPage() {
 
               <a
                 href="mailto:ngenziherve1@gmail.com"
-                className="flex items-center text-gray-700 hover:text-black transition-colors duration-300 group p-4 border-2 border-gray-200 group-hover:border-black"
+                className="flex items-center text-gray-700 hover:text-black transition-colors duration-300 group p-4 border-2 border-gray-200 group-hover:border-black hover-glow transform hover:scale-105"
               >
                 <div className="mr-4">
                   <EmailIcon className="w-8 h-8" />

@@ -116,7 +116,12 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8">
+    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8 animated-bg relative">
+      {/* Enhanced Background Effects */}
+      <div className="bg-shapes"></div>
+      <div className="particles"></div>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Introduction Section */}
         <section className="text-center mb-16 sm:mb-20 animate-fade-in-up">
@@ -137,7 +142,8 @@ export default function AboutPage() {
             {skills.map((skillGroup, index) => (
               <div
                 key={index}
-                className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300"
+                className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300 hover-glow animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                   <span className="w-2 h-6 bg-black mr-3"></span>
@@ -167,7 +173,8 @@ export default function AboutPage() {
             {experiences.map((exp) => (
               <div
                 key={exp.id}
-                className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300"
+                className="bg-white p-6 lg:p-8 border-2 border-gray-200 hover:border-black shadow-sm hover:shadow-lg transition-all duration-300 hover-glow animate-fade-in-up"
+                style={{ animationDelay: `${experiences.indexOf(exp) * 0.1}s` }}
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div className="flex-1">
@@ -183,7 +190,7 @@ export default function AboutPage() {
                   </div>
                   <button
                     onClick={() => toggleAccordion(exp.id)}
-                    className="px-6 py-3 bg-black text-white hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 font-medium"
+                    className="px-6 py-3 bg-black text-white hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 font-medium interactive-element"
                     suppressHydrationWarning
                   >
                     {openAccordion === exp.id ? "Hide Details" : "View Details"}
@@ -232,7 +239,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300"
+            className="inline-block bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 interactive-element hover-glow transform hover:scale-105"
           >
             Get in Touch
           </Link>

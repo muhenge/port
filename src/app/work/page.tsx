@@ -44,23 +44,33 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8">
+    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8 animated-bg relative">
+      {/* Enhanced Background Effects */}
+      <div className="bg-shapes"></div>
+      <div className="particles"></div>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <section className="text-center mb-16 sm:mb-20 animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
-            My Work
+            Featured Work
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Here are some of the projects I've worked on, showcasing my skills and
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
+            Here are some selected highlights from my portfolio, showcasing my skills and
             experience in building scalable and efficient web applications.
           </p>
+          <div className="flex items-center justify-center gap-2 text-gray-500">
+            <span className="text-sm font-medium">Selected from other projects</span>
+            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
+            <span className="text-sm font-medium">More available upon request</span>
+          </div>
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up"
+              className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="flex-1">
@@ -106,7 +116,7 @@ export default function ProjectsPage() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold"
+                    className="inline-block w-full text-center bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold interactive-element"
                   >
                     View Project →
                   </Link>
@@ -115,7 +125,31 @@ export default function ProjectsPage() {
             </div>
           ))}
         </section>
+
+        {/* More Projects CTA */}
+        <section className="text-center mt-16 sm:mt-20 bg-white p-8 lg:p-12 border-2 border-gray-200 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+            Want to See More?
+          </h2>
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            These are just a few highlights from my portfolio. I have worked on many more projects across different technologies and industries.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/contact"
+              className="bg-black text-white px-6 py-3 font-semibold hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 transform hover:scale-105 interactive-element hover-glow"
+            >
+              Request Full Portfolio
+            </Link>
+            <Link
+              href="/about"
+              className="border-2 border-gray-300 text-gray-700 px-6 py-3 font-semibold hover:border-black hover:text-black transition-all duration-300 transform hover:scale-105 interactive-element hover-glow"
+            >
+              Learn More About Me
+            </Link>
+          </div>
+        </section>
       </div>
-    </main >
+    </main>
   );
 }

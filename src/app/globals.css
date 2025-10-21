@@ -146,13 +146,102 @@ html {
   width: 200%;
   height: 200%;
   background: linear-gradient(45deg,
-      rgba(99, 102, 241, 0.03) 0%,
-      rgba(239, 68, 68, 0.03) 25%,
-      rgba(16, 185, 129, 0.03) 50%,
-      rgba(245, 158, 11, 0.03) 75%,
-      rgba(139, 92, 246, 0.03) 100%);
-  animation: float 20s ease-in-out infinite;
+      rgba(99, 102, 241, 0.05) 0%,
+      rgba(239, 68, 68, 0.05) 25%,
+      rgba(16, 185, 129, 0.05) 50%,
+      rgba(245, 158, 11, 0.05) 75%,
+      rgba(139, 92, 246, 0.05) 100%);
+  animation: float 25s ease-in-out infinite;
   z-index: -1;
+}
+
+.animated-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(239, 68, 68, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 60% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(245, 158, 11, 0.07) 0%, transparent 50%);
+  animation: pulse 15s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Additional background animations */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-50px) translateY(-50px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(50px) translateY(-25px) rotate(90deg);
+  }
+
+  50% {
+    transform: translateX(25px) translateY(50px) rotate(180deg);
+  }
+
+  75% {
+    transform: translateX(-25px) translateY(25px) rotate(270deg);
+  }
+
+  100% {
+    transform: translateX(-50px) translateY(-50px) rotate(360deg);
+  }
+}
+
+/* Floating geometric shapes */
+.bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-shapes::before,
+.bg-shapes::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: drift 40s linear infinite;
+}
+
+.bg-shapes::before {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, rgba(99, 102, 241, 0.04), rgba(139, 92, 246, 0.04));
+  top: 20%;
+  left: 10%;
+  animation-delay: -10s;
+}
+
+.bg-shapes::after {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.03), rgba(245, 158, 11, 0.03));
+  top: 60%;
+  right: 15%;
+  animation-delay: -25s;
+  animation-direction: reverse;
 }
 
 /* @plugin "tailwindcss-animate";
@@ -319,3 +408,156 @@ a {
 /*    @apply bg-background text-foreground;*/
 /*  }*/
 /*}*/
+
+/* Mouse interaction effects */
+.hover-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow:hover::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg,
+      rgba(99, 102, 241, 0.1),
+      rgba(239, 68, 68, 0.1),
+      rgba(16, 185, 129, 0.1),
+      rgba(245, 158, 11, 0.1));
+  z-index: -1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Particle effect */
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particles::before,
+.particles::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  animation: particle-float 25s linear infinite;
+}
+
+.particles::before {
+  left: 25%;
+  animation-delay: -8s;
+}
+
+.particles::after {
+  left: 75%;
+  animation-delay: -15s;
+  background: rgba(139, 92, 246, 0.3);
+}
+
+/* Interactive cursor effect */
+.cursor-glow {
+  cursor: none;
+}
+
+.cursor-glow::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+/* Enhanced hover effects for buttons and links */
+.interactive-element {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-element::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.interactive-element:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Ripple effect on click */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  z-index: 0;
+}
