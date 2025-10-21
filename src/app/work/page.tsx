@@ -19,7 +19,7 @@ export default function ProjectsPage() {
       id: "loan-payment-system",
       title: "Online Loan Payment System",
       description:
-          "As a lead software developer, I developer the entire backend of the application, JaliKoi is designed to simplify your life by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place ",
+        "As a lead software developer, I developed the entire backend of the JaliKoi application, which is designed to simplify users' lives by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place.",
       features: [
         "Enabled clients to apply for loans and make payments.",
         "Developed a USSD app for basic mobile phones.",
@@ -28,19 +28,6 @@ export default function ProjectsPage() {
       techStack: ["NestJS", "React.js", "PHP Laravel", "SQL", "Nginx"],
       link: "https://play.google.com/store/apps/details?id=koipay.co.koipay&pli=1",
     },
-    // {
-    //   id: "hotel-management-system",
-    //   title: "Hotel Management System",
-    //   description:
-    //     "A desktop application for managing hotel services and client payments.",
-    //   features: [
-    //     "Connected all hotel services into one platform.",
-    //     "Secured client payment processing.",
-    //     "Generated automated reports for management.",
-    //   ],
-    //   techStack: ["Java Swing", "Java"],
-    //   link: "https://example.com",
-    // },
     {
       id: "open-source-contributions",
       title: "Open Source Contributions",
@@ -58,23 +45,21 @@ export default function ProjectsPage() {
 
   return (
     <main className="min-h-screen p-8 bg-gray-50">
-      {/* Page Title */}
       <section className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
-          Sample projects
+          Sample Projects
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Here are some of the projects I’ve worked on, showcasing my skills and
+          Here are some of the projects I've worked on, showcasing my skills and
           experience in building scalable and efficient web applications.
         </p>
       </section>
 
-      {/* Projects Grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-white p-6 border-2 shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="bg-white p-6 border-2 border-gray-200 shadow-md hover:shadow-lg hover:border-black transition-all duration-300"
           >
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               {project.title}
@@ -85,17 +70,17 @@ export default function ProjectsPage() {
             </h3>
             <ul className="list-disc list-inside text-gray-600 mb-4">
               {project.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
+                <li key={index} className="mb-1">{feature}</li>
               ))}
             </ul>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">
               Tech Stack
             </h3>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-6">
               {project.techStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-black text-white px-3 py-1 text-sm"
+                  className="bg-black text-white px-3 py-1 text-sm rounded-md"
                 >
                   {tech}
                 </span>
@@ -106,7 +91,7 @@ export default function ProjectsPage() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-black text-white px-4 py-2 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300"
+                className="inline-block bg-black text-white px-4 py-2 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300"
               >
                 View Project
               </Link>

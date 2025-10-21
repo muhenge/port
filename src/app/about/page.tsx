@@ -105,7 +105,7 @@ export default function AboutPage() {
           About Me
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Hi, I&apos;m HERVE M. Ngenzi, a full-stack web developer with a passion for building scalable and efficient web applications. I have professional experience working with modern frameworks and tools, and I love solving complex problems with clean and maintainable code.
+          Hi, I'm HERVE M. Ngenzi, a full-stack web developer passionate about building scalable and efficient web applications. With professional experience working with modern frameworks and tools, I specialize in solving complex problems with clean, maintainable code.
         </p>
       </section>
 

@@ -34,7 +34,7 @@ export default function RootLayout({
 
         <Header />
         {/* Add padding to main to prevent content overlap */}
-        <main className="pt-20 pb-16 sm:pb-0">{children}</main>
+        <main className="">{children}</main>
 
       </body>
       </html>

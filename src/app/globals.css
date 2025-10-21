@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+*:focus {
+  @apply outline-none ring-2 ring-black ring-offset-2;
+}
+
+/* Better selection colors */
+::selection {
+  @apply bg-black text-white;
+}
+
 /* @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *)); */
