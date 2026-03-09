@@ -1,7 +1,17 @@
 import Link from "next/link";
 
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  techStack: string[];
+  link: string;
+  docsLink?: string;
+};
+
 export default function ProjectsPage() {
-  const projects = [
+  const projects: Project[] = [
     {
       id: "ihuzo-project",
       title: "Ihuzo Project",
@@ -16,10 +26,24 @@ export default function ProjectsPage() {
       link: "https://ihuzo.rw/?tab=dsp",
     },
     {
+      id: "tekki-personal-api",
+      title: "Tekki Personal API",
+      description:
+        "A Ruby on Rails personal API application exposing structured endpoints with interactive documentation.",
+      features: [
+        "Built with Rails API architecture for clean, maintainable backend services.",
+        "Published interactive API documentation for easy integration.",
+        "Open-sourced the project on GitHub for transparency and collaboration.",
+      ],
+      techStack: ["Ruby on Rails", "Ruby", "REST APIs"],
+      link: "https://github.com/muhenge/tekki",
+      docsLink: "https://teki-api.fly.dev/api-docs/index.html",
+    },
+    {
       id: "loan-payment-system",
       title: "Online Loan Payment System",
       description:
-        "As a lead software developer, I developed the entire backend of the JaliKoi application, which is designed to simplify users' lives by bringing together a wide range of digital services—from financial tools to shopping and dining—all in one place.",
+        "As a lead software developer, I developed the entire backend of the JaliKoi application, which is designed to simplify users' lives by bringing together a wide range of digital services-from financial tools to shopping and dining-all in one place.",
       features: [
         "Enabled clients to apply for loans and make payments.",
         "Developed a USSD application for basic mobile phones.",
@@ -75,7 +99,6 @@ export default function ProjectsPage() {
       <div className="bg-shapes"></div>
       <div className="particles"></div>
 
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <section className="text-center mb-16 sm:mb-20 animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
@@ -93,113 +116,162 @@ export default function ProjectsPage() {
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
-          {projects.filter((project) => project.link.startsWith("http")).map((project, index) => (
-            <div
-              key={project.id}
-              className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="flex-1">
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 flex items-center">
-                  <span className="w-2 h-8 bg-black mr-3"></span>
-                  {project.title}
-                </h2>
-                <p className="text-gray-600 mb-6 leading-relaxed text-base lg:text-lg">
-                  {project.description}
-                </p>
+          {projects
+            .filter((project) => project.link.startsWith("http"))
+            .map((project, index) => (
+              <div
+                key={project.id}
+                className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="flex-1">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <span className="w-2 h-8 bg-black mr-3"></span>
+                    {project.title}
+                  </h2>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-base lg:text-lg">
+                    {project.description}
+                  </p>
 
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    Key Features
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2">
-                    {project.features.map((feature, index) => (
-                      <li key={index} className="pl-2 leading-relaxed">{feature}</li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Key Features</h3>
+                    <ul className="list-disc list-inside text-gray-600 space-y-2">
+                      {project.features.map((feature, index) => (
+                        <li key={index} className="pl-2 leading-relaxed">
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    Tech Stack
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, index) => {
-                      // Map tech names to devicon classes and URLs
-                      const getTechInfo = (techName: string) => {
-                        const techMap: { [key: string]: { icon: string; url: string } } = {
-                          'PHP Laravel': { icon: 'devicon-laravel-plain', url: 'https://laravel.com/' },
-                          'Node.js': { icon: 'devicon-nodejs-plain', url: 'https://nodejs.org/' },
-                          'Redis': { icon: 'devicon-redis-plain', url: 'https://redis.io/' },
-                          'PostgreSQL': { icon: 'devicon-postgresql-plain', url: 'https://www.postgresql.org/' },
-                          'NestJS': { icon: 'devicon-nestjs-plain', url: 'https://nestjs.com/' },
-                          'React.js': { icon: 'devicon-react-original', url: 'https://reactjs.org/' },
-                          'SQL': { icon: 'devicon-mysql-plain', url: 'https://www.w3schools.com/sql/' },
-                          'Nginx': { icon: 'devicon-nginx-original', url: 'https://nginx.org/' },
-                          'Docker': { icon: 'devicon-docker-plain', url: 'https://www.docker.com/' },
-                          'REST APIs': { icon: 'devicon-fastapi-plain', url: 'https://restfulapi.net/' },
-                          'Database Design': { icon: 'devicon-postgresql-plain', url: '#' },
-                          'OOP': { icon: 'devicon-java-plain', url: '#' },
-                          'Training': { icon: '', url: '#' },
-                          'Mentoring': { icon: '', url: '#' }
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Tech Stack</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech, index) => {
+                        // Map tech names to devicon classes and URLs
+                        const getTechInfo = (techName: string) => {
+                          const techMap: { [key: string]: { icon: string; url: string } } = {
+                            "PHP Laravel": {
+                              icon: "devicon-laravel-plain",
+                              url: "https://laravel.com/",
+                            },
+                            "Node.js": {
+                              icon: "devicon-nodejs-plain",
+                              url: "https://nodejs.org/",
+                            },
+                            Redis: {
+                              icon: "devicon-redis-plain",
+                              url: "https://redis.io/",
+                            },
+                            PostgreSQL: {
+                              icon: "devicon-postgresql-plain",
+                              url: "https://www.postgresql.org/",
+                            },
+                            NestJS: {
+                              icon: "devicon-nestjs-plain",
+                              url: "https://nestjs.com/",
+                            },
+                            "React.js": {
+                              icon: "devicon-react-original",
+                              url: "https://reactjs.org/",
+                            },
+                            SQL: {
+                              icon: "devicon-mysql-plain",
+                              url: "https://www.w3schools.com/sql/",
+                            },
+                            Nginx: {
+                              icon: "devicon-nginx-original",
+                              url: "https://nginx.org/",
+                            },
+                            Docker: {
+                              icon: "devicon-docker-plain",
+                              url: "https://www.docker.com/",
+                            },
+                            "REST APIs": {
+                              icon: "devicon-fastapi-plain",
+                              url: "https://restfulapi.net/",
+                            },
+                            "Ruby on Rails": {
+                              icon: "devicon-rails-plain",
+                              url: "https://rubyonrails.org/",
+                            },
+                            Ruby: {
+                              icon: "devicon-ruby-plain",
+                              url: "https://www.ruby-lang.org/",
+                            },
+                            "Database Design": { icon: "devicon-postgresql-plain", url: "#" },
+                            OOP: { icon: "devicon-java-plain", url: "#" },
+                            Training: { icon: "", url: "#" },
+                            Mentoring: { icon: "", url: "#" },
+                          };
+                          return techMap[techName] || { icon: "", url: "#" };
                         };
-                        return techMap[techName] || { icon: '', url: '#' };
-                      };
 
-                      const techInfo = getTechInfo(tech);
+                        const techInfo = getTechInfo(tech);
 
-                      return techInfo.url !== '#' ? (
-                        <a
-                          key={index}
-                          href={techInfo.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2 transform hover:scale-105"
-                        >
-                          {techInfo.icon && (
-                            <i className={`${techInfo.icon} text-base`}></i>
-                          )}
-                          {tech}
-                        </a>
-                      ) : (
-                        <span
-                          key={index}
-                          className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2"
-                        >
-                          {techInfo.icon && (
-                            <i className={`${techInfo.icon} text-base`}></i>
-                          )}
-                          {tech}
-                        </span>
-                      );
-                    })}
+                        return techInfo.url !== "#" ? (
+                          <a
+                            key={index}
+                            href={techInfo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2 transform hover:scale-105"
+                          >
+                            {techInfo.icon && <i className={`${techInfo.icon} text-base`}></i>}
+                            {tech}
+                          </a>
+                        ) : (
+                          <span
+                            key={index}
+                            className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2"
+                          >
+                            {techInfo.icon && <i className={`${techInfo.icon} text-base`}></i>}
+                            {tech}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {project.link && (
-                <div className="mt-auto">
-                  <Link
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold interactive-element"
-                  >
-                    View Project →
-                  </Link>
-                </div>
-              )}
-            </div>
-          ))}
+                {project.link && (
+                  <div className="mt-auto flex flex-col gap-3">
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold interactive-element"
+                    >
+                      View Project →
+                    </Link>
+
+                    {project.docsLink && (
+                      <Link
+                        href={project.docsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center border-2 border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-all duration-300 font-semibold interactive-element"
+                      >
+                        API Docs →
+                      </Link>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
         </section>
 
         {/* More Projects CTA */}
-        <section className="text-center mt-16 sm:mt-20 bg-white p-8 lg:p-12 border-2 border-gray-200 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <section
+          className="text-center mt-16 sm:mt-20 bg-white p-8 lg:p-12 border-2 border-gray-200 animate-fade-in-up"
+          style={{ animationDelay: "0.6s" }}
+        >
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
             Want to See More?
           </h2>
           <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            These are just a few highlights from my portfolio. I have worked on many more projects across different technologies and industries.
+            These are just a few highlights from my portfolio. I have worked on many more
+            projects across different technologies and industries.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
