@@ -31,7 +31,7 @@ export default function Home() {
                 Full-Stack Web Developer
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Seasoned full-stack developer with a strong focus on back-end development. Passionate about providing software solutions that drive business growth and efficiency.
+                Seasoned full-stack developer with a strong focus on back-end development. Passionate about delivering software solutions that drive business growth and efficiency.
               </p>
             </div>
 

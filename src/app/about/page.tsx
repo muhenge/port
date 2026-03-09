@@ -15,7 +15,7 @@ export default function AboutPage() {
     {
       category: 'Backend Frameworks',
       items: [
-        { name: 'Nest.js', icon: 'devicon-nestjs-plain', url: 'https://nestjs.com/' },
+        { name: 'NestJS', icon: 'devicon-nestjs-plain', url: 'https://nestjs.com/' },
         { name: 'PHP Laravel', icon: 'devicon-laravel-plain', url: 'https://laravel.com/' },
         { name: 'Ruby on Rails', icon: 'devicon-rails-plain', url: 'https://rubyonrails.org/' },
         { name: 'Express.js', icon: 'devicon-express-original', url: 'https://expressjs.com/' },
@@ -100,7 +100,7 @@ export default function AboutPage() {
       location: "Remote, Cyprus",
       achievements: [
         "Built performant and secure server-side applications and databases by selecting the right tools and technologies.",
-        "Reviewed code for developers and provided appropriate feedback, maintaining a 100% success rate in project structure, SOLID, DRY, and YAGNI principles.",
+        "Reviewed code and provided actionable feedback while maintaining high standards for project structure and adherence to SOLID, DRY, and YAGNI principles.",
       ],
       techStack: [
         "TypeScript",
@@ -116,7 +116,7 @@ export default function AboutPage() {
     {
       id: "klab",
       title: "Full-stack Developer (Contractor)",
-      company: "Klab",
+      company: "kLab",
       duration: "2022 – 2023",
       location: "Kigali, Rwanda",
       achievements: [
@@ -136,7 +136,7 @@ export default function AboutPage() {
       achievements: [
         "Built backend database applications with 100% normalization and no redundancy.",
         "Optimized large codebases for performance.",
-        "Built and integrated APIs in frontend React.js applications.",
+        "Built and integrated APIs into front-end React.js applications.",
       ],
       techStack: ["PHP Laravel", "React.js/Redux", "MySQL", "PostgreSQL"],
     },
@@ -164,7 +164,7 @@ export default function AboutPage() {
       achievements: [
         "Train public sector workers in ICT skills using ICDL modules.",
         "Ensure workers have the basic skills needed for day-to-day work efficiency.",
-        "Developing digital literacy programs for government employees.",
+        "Develop digital literacy programs for government employees.",
       ],
       techStack: ["ICDL", "ICT Training", "Digital Literacy", "Public Sector"],
     },

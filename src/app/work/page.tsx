@@ -32,11 +32,11 @@ export default function ProjectsPage() {
       id: "globexcam-backend",
       title: "GlobexCam Backend Systems",
       description:
-        "Architected and developed optimized backend database applications with focus on performance and scalability.",
+        "Architected and developed optimized backend database applications with a focus on performance and scalability.",
       features: [
         "Built backend database applications with 100% normalization.",
         "Optimized large-scale codebase for performance and maintainability.",
-        "Designed and integrated RESTful APIs for React.js frontend applications.",
+        "Designed and integrated RESTful APIs for front-end React.js applications.",
       ],
       techStack: ["PHP Laravel", "React.js", "MySQL", "PostgreSQL", "REST APIs"],
       link: "#",
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
-          {projects.map((project, index) => (
+          {projects.filter((project) => project.link.startsWith("http")).map((project, index) => (
             <div
               key={project.id}
               className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
