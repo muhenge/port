@@ -62,7 +62,13 @@ export default function ProjectsPage() {
         "Optimized large-scale codebase for performance and maintainability.",
         "Designed and integrated RESTful APIs for front-end React.js applications.",
       ],
-      techStack: ["PHP Laravel", "React.js", "MySQL", "PostgreSQL", "REST APIs"],
+      techStack: [
+        "PHP Laravel",
+        "React.js",
+        "MySQL",
+        "PostgreSQL",
+        "REST APIs",
+      ],
       link: "#",
     },
     {
@@ -75,7 +81,13 @@ export default function ProjectsPage() {
         "Provided hands-on mentorship for real-world development challenges.",
         "Equipped trainees with REST API development and database management skills.",
       ],
-      techStack: ["Training", "Mentoring", "REST APIs", "Database Design", "OOP"],
+      techStack: [
+        "Training",
+        "Mentoring",
+        "REST APIs",
+        "Database Design",
+        "OOP",
+      ],
       link: "#",
     },
     {
@@ -94,24 +106,29 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-20 sm:pb-8 animated-bg relative">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-950 pt-20 sm:pt-24 pb-20 sm:pb-8 animated-bg relative">
       {/* Enhanced Background Effects */}
       <div className="bg-shapes"></div>
       <div className="particles"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <section className="text-center mb-16 sm:mb-20 animate-fade-in-up">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-6">
             Featured Work
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
-            Here are some selected highlights from my portfolio, showcasing my skills and
-            experience in building scalable and efficient web applications.
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-4">
+            Here are some selected highlights from my portfolio, showcasing my
+            skills and experience in building scalable and efficient web
+            applications.
           </p>
-          <div className="flex items-center justify-center gap-2 text-gray-500">
-            <span className="text-sm font-medium">Selected from other projects</span>
-            <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-            <span className="text-sm font-medium">More available upon request</span>
+          <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400">
+            <span className="text-sm font-medium">
+              Selected from other projects
+            </span>
+            <span className="w-2 h-2 bg-gray-400 dark:bg-gray-600 rounded-full"></span>
+            <span className="text-sm font-medium">
+              More available upon request
+            </span>
           </div>
         </section>
 
@@ -121,21 +138,23 @@ export default function ProjectsPage() {
             .map((project, index) => (
               <div
                 key={project.id}
-                className="bg-white p-6 lg:p-8 border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-black transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
+                className="bg-white dark:bg-gray-900 p-6 lg:p-8 border-2 border-gray-200 dark:border-gray-800 shadow-md hover:shadow-xl hover:border-black dark:hover:border-white transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex-1">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4 flex items-center">
-                    <span className="w-2 h-8 bg-black mr-3"></span>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+                    <span className="w-2 h-8 bg-black dark:bg-white mr-3"></span>
                     {project.title}
                   </h2>
-                  <p className="text-gray-600 mb-6 leading-relaxed text-base lg:text-lg">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base lg:text-lg">
                     {project.description}
                   </p>
 
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Key Features</h3>
-                    <ul className="list-disc list-inside text-gray-600 space-y-2">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">
+                      Key Features
+                    </h3>
+                    <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
                       {project.features.map((feature, index) => (
                         <li key={index} className="pl-2 leading-relaxed">
                           {feature}
@@ -145,12 +164,16 @@ export default function ProjectsPage() {
                   </div>
 
                   <div className="mb-8">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Tech Stack</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">
+                      Tech Stack
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, index) => {
                         // Map tech names to devicon classes and URLs
                         const getTechInfo = (techName: string) => {
-                          const techMap: { [key: string]: { icon: string; url: string } } = {
+                          const techMap: {
+                            [key: string]: { icon: string; url: string };
+                          } = {
                             "PHP Laravel": {
                               icon: "devicon-laravel-plain",
                               url: "https://laravel.com/",
@@ -199,7 +222,10 @@ export default function ProjectsPage() {
                               icon: "devicon-ruby-plain",
                               url: "https://www.ruby-lang.org/",
                             },
-                            "Database Design": { icon: "devicon-postgresql-plain", url: "#" },
+                            "Database Design": {
+                              icon: "devicon-postgresql-plain",
+                              url: "#",
+                            },
                             OOP: { icon: "devicon-java-plain", url: "#" },
                             Training: { icon: "", url: "#" },
                             Mentoring: { icon: "", url: "#" },
@@ -215,17 +241,21 @@ export default function ProjectsPage() {
                             href={techInfo.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2 transform hover:scale-105"
+                            className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 cursor-pointer flex items-center gap-2 transform hover:scale-105"
                           >
-                            {techInfo.icon && <i className={`${techInfo.icon} text-base`}></i>}
+                            {techInfo.icon && (
+                              <i className={`${techInfo.icon} text-base`}></i>
+                            )}
                             {tech}
                           </a>
                         ) : (
                           <span
                             key={index}
-                            className="bg-gray-100 text-gray-800 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer flex items-center gap-2"
+                            className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 px-3 py-1.5 text-sm font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 cursor-pointer flex items-center gap-2"
                           >
-                            {techInfo.icon && <i className={`${techInfo.icon} text-base`}></i>}
+                            {techInfo.icon && (
+                              <i className={`${techInfo.icon} text-base`}></i>
+                            )}
                             {tech}
                           </span>
                         );
@@ -240,7 +270,7 @@ export default function ProjectsPage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-full text-center bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-md transition-all duration-300 font-semibold interactive-element"
+                      className="inline-block w-full text-center bg-black text-white dark:bg-white dark:text-black px-6 py-3 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 hover:border-black dark:hover:border-white hover:shadow-md transition-all duration-300 font-semibold interactive-element"
                     >
                       View Project →
                     </Link>
@@ -250,7 +280,7 @@ export default function ProjectsPage() {
                         href={project.docsLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block w-full text-center border-2 border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-all duration-300 font-semibold interactive-element"
+                        className="inline-block w-full text-center border-2 border-black dark:border-white text-black dark:text-white px-6 py-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 font-semibold interactive-element"
                       >
                         API Docs →
                       </Link>
@@ -263,26 +293,26 @@ export default function ProjectsPage() {
 
         {/* More Projects CTA */}
         <section
-          className="text-center mt-16 sm:mt-20 bg-white p-8 lg:p-12 border-2 border-gray-200 animate-fade-in-up"
+          className="text-center mt-16 sm:mt-20 bg-white dark:bg-gray-900 p-8 lg:p-12 border-2 border-gray-200 dark:border-gray-800 animate-fade-in-up"
           style={{ animationDelay: "0.6s" }}
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             Want to See More?
           </h2>
-          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            These are just a few highlights from my portfolio. I have worked on many more
-            projects across different technologies and industries.
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            These are just a few highlights from my portfolio. I have worked on
+            many more projects across different technologies and industries.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/contact"
-              className="bg-black text-white px-6 py-3 font-semibold hover:bg-white hover:text-black hover:border-2 hover:border-black transition-all duration-300 transform hover:scale-105 interactive-element hover-glow"
+              className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 font-semibold hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 hover:border-black dark:hover:border-white transition-all duration-300 transform hover:scale-105 interactive-element hover-glow"
             >
               Request Full Portfolio
             </Link>
             <Link
               href="/about"
-              className="border-2 border-gray-300 text-gray-700 px-6 py-3 font-semibold hover:border-black hover:text-black transition-all duration-300 transform hover:scale-105 interactive-element hover-glow"
+              className="border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 px-6 py-3 font-semibold hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-all duration-300 transform hover:scale-105 interactive-element hover-glow"
             >
               Learn More About Me
             </Link>
