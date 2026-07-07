@@ -49,7 +49,7 @@ export default function HomeHero() {
 
             {/* Call-to-Action Buttons */}
             <div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up"
+              className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-12 animate-fade-in-up"
               style={{ animationDelay: "0.8s" }}
             >
               <Link
@@ -64,6 +64,15 @@ export default function HomeHero() {
               >
                 View my work
               </Link>
+              <a
+                href="/NGENZI_HERVE_RES.pdf"
+                download="NGENZI_HERVE_RES.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100 px-8 py-4 text-lg font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:shadow-lg transition-all duration-300 w-full sm:w-auto transform hover:scale-105 interactive-element hover-glow flex items-center justify-center gap-2"
+              >
+                Download Resume ⬇
+              </a>
             </div>
 
             {/* Social Links */}

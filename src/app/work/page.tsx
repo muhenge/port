@@ -13,31 +13,17 @@ type Project = {
 export default function ProjectsPage() {
   const projects: Project[] = [
     {
-      id: "ihuzo-project",
-      title: "Ihuzo Project",
-      description:
-        "A full-stack project leveraging PHP Laravel to solve performance issues with external API data.",
+      id: "esheva-api",
+      title: "Esheva Mobile App API",
+      description: "A comprehensive and scalable RESTful API built for the Esheva mobile application, featuring robust authentication, cloud storage, and AI integration.",
       features: [
-        "Reduced data acquisition costs by 100%.",
-        "Improved response times by 70%.",
-        "Integrated Redis for caching.",
+        "Implemented secure authentication with JWT and multiple OAuth providers (Google, Apple, Microsoft).",
+        "Integrated Cloudinary for efficient media upload and storage.",
+        "Utilized Redis for advanced caching mechanisms to enhance API response times.",
       ],
-      techStack: ["PHP Laravel", "Node.js", "Redis", "PostgreSQL"],
-      link: "https://ihuzo.rw/?tab=dsp",
-    },
-    {
-      id: "tekki-personal-api",
-      title: "Tekki Personal API",
-      description:
-        "A Ruby on Rails personal API application exposing structured endpoints with interactive documentation.",
-      features: [
-        "Built with Rails API architecture for clean, maintainable backend services.",
-        "Published interactive API documentation for easy integration.",
-        "Open-sourced the project on GitHub for transparency and collaboration.",
-      ],
-      techStack: ["Ruby on Rails", "Ruby", "REST APIs"],
-      link: "https://github.com/muhenge/tekki",
-      docsLink: "https://teki-api.fly.dev/api-docs/index.html",
+      techStack: ["NestJS", "PostgreSQL", "Redis", "REST APIs"],
+      docsLink: "https://github.com/muhenge/esheva-api",
+      link: ""
     },
     {
       id: "loan-payment-system",
@@ -53,56 +39,95 @@ export default function ProjectsPage() {
       link: "https://jalikoi.rw/",
     },
     {
-      id: "globexcam-backend",
-      title: "GlobexCam Backend Systems",
+      id: "ihuzo-project",
+      title: "Ihuzo Project",
       description:
-        "Architected and developed optimized backend database applications with a focus on performance and scalability.",
+        "A full-stack project leveraging PHP Laravel to solve performance issues with external API data.",
       features: [
-        "Built backend database applications with 100% normalization.",
-        "Optimized large-scale codebase for performance and maintainability.",
-        "Designed and integrated RESTful APIs for front-end React.js applications.",
+        "Reduced data acquisition costs by 100%.",
+        "Improved response times by 70%.",
+        "Integrated Redis for caching.",
       ],
-      techStack: [
-        "PHP Laravel",
-        "React.js",
-        "MySQL",
-        "PostgreSQL",
-        "REST APIs",
-      ],
-      link: "#",
+      techStack: ["PHP Laravel", "Node.js", "Redis", "PostgreSQL"],
+      link: "https://ihuzo.rw/?tab=dsp",
     },
     {
-      id: "training-programs",
-      title: "Backend Development Training Programs",
+      id: "Konecta",
+      title: "Konecta Application",
       description:
-        "Led comprehensive training programs for tech enthusiasts and graduates, focusing on backend development and software engineering.",
+        "A full-stack personal application featuring an AI system and APIs, designed for seamless user experiences.",
       features: [
-        "Designed training curricula aligned with industry best practices.",
-        "Provided hands-on mentorship for real-world development challenges.",
-        "Equipped trainees with REST API development and database management skills.",
+        "Built a responsive and SEO-friendly frontend using Next.js.",
+        "Developed a robust backend architecture using Ruby on Rails.",
+        "Integrated advanced AI systems and external APIs for dynamic features.",
       ],
-      techStack: [
-        "Training",
-        "Mentoring",
-        "REST APIs",
-        "Database Design",
-        "OOP",
-      ],
-      link: "#",
+      techStack: ["Next.js", "React.js", "Ruby on Rails", "REST APIs", "AI Systems"],
+      link: "https://tekki-front.vercel.app/en",
     },
     {
-      id: "open-source-contributions",
-      title: "Open Source Contributions",
+      id: "jethro-house-rwanda",
+      title: "Jethro House Rwanda",
       description:
-        "Collaborated with Andela's open-source program to improve existing projects and contribute to the developer community.",
+        "A comprehensive charity platform dedicated to empowering vulnerable communities, single mothers, and youth in Rwanda by facilitating donations and showcasing impact.",
       features: [
-        "Fixed bugs and improved project structure.",
-        "Worked with PHP Laravel and PostgreSQL.",
-        "Used Docker for containerization.",
+        "Developed a responsive and accessible web platform for global awareness.",
+        "Integrated a secure donation system using Stripe to support charity initiatives.",
+        "Built a robust system to showcase ongoing projects, success stories, and community impact.",
       ],
-      techStack: ["PHP Laravel", "PostgreSQL", "Docker"],
-      link: "https://github.com/ALCOpenSource/Mentor-Management-System-Team-1",
+      techStack: ["Next.js", "PostgreSQL", "Stripe"],
+      link: "https://jethrohouserwanda.org/",
     },
+    // {
+    //   id: "globexcam-backend",
+    //   title: "GlobexCam Backend Systems",
+    //   description:
+    //     "Architected and developed optimized backend database applications with a focus on performance and scalability.",
+    //   features: [
+    //     "Built backend database applications with 100% normalization.",
+    //     "Optimized large-scale codebase for performance and maintainability.",
+    //     "Designed and integrated RESTful APIs for front-end React.js applications.",
+    //   ],
+    //   techStack: [
+    //     "PHP Laravel",
+    //     "React.js",
+    //     "MySQL",
+    //     "PostgreSQL",
+    //     "REST APIs",
+    //   ],
+    //   link: "#",
+    // },
+    // {
+    //   id: "training-programs",
+    //   title: "Backend Development Training Programs",
+    //   description:
+    //     "Led comprehensive training programs for tech enthusiasts and graduates, focusing on backend development and software engineering.",
+    //   features: [
+    //     "Designed training curricula aligned with industry best practices.",
+    //     "Provided hands-on mentorship for real-world development challenges.",
+    //     "Equipped trainees with REST API development and database management skills.",
+    //   ],
+    //   techStack: [
+    //     "Training",
+    //     "Mentoring",
+    //     "REST APIs",
+    //     "Database Design",
+    //     "OOP",
+    //   ],
+    //   link: "#",
+    // },
+    // {
+    //   id: "open-source-contributions",
+    //   title: "Open Source Contributions",
+    //   description:
+    //     "Collaborated with Andela's open-source program to improve existing projects and contribute to the developer community.",
+    //   features: [
+    //     "Fixed bugs and improved project structure.",
+    //     "Worked with PHP Laravel and PostgreSQL.",
+    //     "Used Docker for containerization.",
+    //   ],
+    //   techStack: ["PHP Laravel", "PostgreSQL", "Docker"],
+    //   link: "https://github.com/ALCOpenSource/Mentor-Management-System-Team-1",
+    // },
   ];
 
   return (
@@ -133,9 +158,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
-          {projects
-            .filter((project) => project.link.startsWith("http"))
-            .map((project, index) => (
+          {projects.map((project, index) => (
               <div
                 key={project.id}
                 className="bg-white dark:bg-gray-900 p-6 lg:p-8 border-2 border-gray-200 dark:border-gray-800 shadow-md hover:shadow-xl hover:border-black dark:hover:border-white transition-all duration-300 flex flex-col transform hover:-translate-y-2 animate-fade-in-up hover-glow"
@@ -193,6 +216,10 @@ export default function ProjectsPage() {
                             NestJS: {
                               icon: "devicon-nestjs-plain",
                               url: "https://nestjs.com/",
+                            },
+                            "Next.js": {
+                              icon: "devicon-nextjs-original",
+                              url: "https://nextjs.org/",
                             },
                             "React.js": {
                               icon: "devicon-react-original",
@@ -264,16 +291,18 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                {project.link && (
+                {(project.link.startsWith("http") || project.docsLink) && (
                   <div className="mt-auto flex flex-col gap-3">
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block w-full text-center bg-black text-white dark:bg-white dark:text-black px-6 py-3 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 hover:border-black dark:hover:border-white hover:shadow-md transition-all duration-300 font-semibold interactive-element"
-                    >
-                      View Project →
-                    </Link>
+                    {project.link.startsWith("http") && (
+                      <Link
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center bg-black text-white dark:bg-white dark:text-black px-6 py-3 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 hover:border-black dark:hover:border-white hover:shadow-md transition-all duration-300 font-semibold interactive-element"
+                      >
+                        View Project →
+                      </Link>
+                    )}
 
                     {project.docsLink && (
                       <Link
@@ -282,7 +311,7 @@ export default function ProjectsPage() {
                         rel="noopener noreferrer"
                         className="inline-block w-full text-center border-2 border-black dark:border-white text-black dark:text-white px-6 py-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 font-semibold interactive-element"
                       >
-                        API Docs →
+                        GitHub Repository →
                       </Link>
                     )}
                   </div>
