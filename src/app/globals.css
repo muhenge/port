@@ -259,3 +259,20 @@ html {
   overflow: hidden;
   z-index: -1;
 }
+
+/* Custom Scrollbar to match Monochrome Theme */
+::-webkit-scrollbar {
+  width: 22px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-black dark:bg-white rounded-none border-2 border-solid border-gray-100 dark:border-gray-950;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-800 dark:bg-gray-200;
+}
