@@ -12,6 +12,19 @@ type Project = {
 
 export default function ProjectsPage() {
   const projects: Project[] = [
+       {
+      id: "Konecta",
+      title: "Konecta Application",
+      description:
+        "A full-stack personal application featuring an AI system and APIs, designed for seamless user experiences.",
+      features: [
+        "Built a responsive and SEO-friendly frontend using Next.js.",
+        "Developed a robust backend architecture using Ruby on Rails.",
+        "Integrated advanced AI systems and external APIs for dynamic features.",
+      ],
+      techStack: ["Next.js", "React.js", "Ruby on Rails", "REST APIs", "AI Systems"],
+      link: "https://tekki-front.vercel.app/en",
+    },
     {
       id: "esheva-api",
       title: "Esheva Mobile App API",
@@ -51,19 +64,7 @@ export default function ProjectsPage() {
       techStack: ["PHP Laravel", "Node.js", "Redis", "PostgreSQL"],
       link: "https://ihuzo.rw/?tab=dsp",
     },
-    {
-      id: "Konecta",
-      title: "Konecta Application",
-      description:
-        "A full-stack personal application featuring an AI system and APIs, designed for seamless user experiences.",
-      features: [
-        "Built a responsive and SEO-friendly frontend using Next.js.",
-        "Developed a robust backend architecture using Ruby on Rails.",
-        "Integrated advanced AI systems and external APIs for dynamic features.",
-      ],
-      techStack: ["Next.js", "React.js", "Ruby on Rails", "REST APIs", "AI Systems"],
-      link: "https://tekki-front.vercel.app/en",
-    },
+
     {
       id: "jethro-house-rwanda",
       title: "Jethro House Rwanda",
