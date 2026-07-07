@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Nav } from "./nav";
 
 import HomeIcon from "@mui/icons-material/Home";
@@ -10,10 +11,47 @@ import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50 || currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const shouldShow = isVisible || isHovered;
+
   return (
     <>
+      {/* Invisible hover trigger zone at the bottom of the screen */}
+      <div 
+        className="fixed bottom-0 left-0 w-full h-16 z-40 hidden sm:block"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      />
+
       {/* Desktop Navigation Bar */}
-      <nav className="hidden sm:flex items-center fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-100/70 dark:bg-gray-900/70 backdrop-blur-[5px] shadow-sm border-2 border-gray-300/50 dark:border-gray-700/60 px-6 min-w-[600px] lg:min-w-[700px]">
+      <nav 
+        className={`hidden sm:flex items-center fixed left-1/2 transform -translate-x-1/2 z-50 bg-gray-100/70 dark:bg-gray-900/70 backdrop-blur-[5px] shadow-2xl border-2 border-gray-300/50 dark:border-gray-700/60 px-6 min-w-[600px] lg:min-w-[700px] transition-all duration-500 ease-in-out ${
+          shouldShow ? "bottom-8 opacity-100 translate-y-0" : "-bottom-32 opacity-0 translate-y-full"
+        }`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* Profile Picture with Link to Home */}
         <Link href="/" className="mr-8 group relative">
           <div className="border-2 border-white dark:border-gray-800 shadow-sm overflow-hidden hover:scale-105 transition-transform duration-300 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-900">
@@ -56,7 +94,11 @@ export function Header() {
       </nav>
 
       {/* Mobile Navigation Bar */}
-      <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-100/70 dark:bg-gray-900/70 backdrop-blur-[10px] shadow-2xl border-2 border-gray-300/50 dark:border-gray-700/60 sm:hidden px-4 py-3 min-w-[320px] flex items-center">
+      <nav 
+        className={`fixed left-1/2 transform -translate-x-1/2 z-50 bg-gray-100/70 dark:bg-gray-900/70 backdrop-blur-[10px] shadow-2xl border-2 border-gray-300/50 dark:border-gray-700/60 sm:hidden px-4 py-3 min-w-[320px] flex items-center transition-all duration-500 ease-in-out ${
+          shouldShow ? "bottom-6 opacity-100 translate-y-0" : "-bottom-32 opacity-0 translate-y-full"
+        }`}
+      >
         <ul className="flex flex-1 justify-center space-x-1">
           <Nav text="HOME" url="/" icon={<HomeIcon className="w-6 h-6" />} />
           <Nav
