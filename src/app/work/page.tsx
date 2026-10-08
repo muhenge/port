@@ -12,7 +12,29 @@ type Project = {
 
 export default function ProjectsPage() {
   const projects: Project[] = [
-       {
+    {
+      id: "mighty-engineering-portal",
+      title: "Mighty Engineering Portal",
+      description:
+        "An enterprise solar project fulfillment CRM and engineering management platform developed as Full-Stack Lead Developer, streamlining operations across 50 US states.",
+      features: [
+        "Built an enterprise solar project fulfillment portal serving 70,000+ residential and commercial solar designs across 50 US states.",
+        "Engineered a multi-tier RBAC system with strict location scoping and PII masking.",
+        "Implemented an automated grading engine, tracking, real-time WebSocket messaging.",
+      ],
+      techStack: [
+        "Next.js",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Drizzle ORM",
+        "WebSockets",
+        "Docker",
+        "Coolify",
+      ],
+      link: "https://www.portal.mightyengineeringco.com/",
+    },
+    {
       id: "Konecta",
       title: "Konecta Application",
       description:
@@ -257,6 +279,18 @@ export default function ProjectsPage() {
                             OOP: { icon: "devicon-java-plain", url: "#" },
                             Training: { icon: "", url: "#" },
                             Mentoring: { icon: "", url: "#" },
+                            "Drizzle ORM": {
+                              icon: "",
+                              url: "https://orm.drizzle.team/",
+                            },
+                            WebSockets: {
+                              icon: "devicon-socketio-original",
+                              url: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+                            },
+                            Coolify: {
+                              icon: "",
+                              url: "https://coolify.io/",
+                            },
                           };
                           return techMap[techName] || { icon: "", url: "#" };
                         };
